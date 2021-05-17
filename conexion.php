@@ -2,10 +2,17 @@
 
 class conexion{
    
-    const user='root';
-    const pass='';
-    const db='servidoriot';
-    const servidor='localhost';
+    //Development
+    //const user='root';
+    //const pass='';
+    //const db='servidoriot';
+    //const servidor='localhost';
+
+    //Remote Database
+    const user='piYJEwHiNC';
+    const pass='q91fFhpaFB';
+    const db='piYJEwHiNC';
+    const servidor='remotemysql.com';
 
     public function conectardb(){
         $conectar = new mysqli(self::servidor, self::user,self::pass,self::db);
