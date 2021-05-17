@@ -1,26 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Envia Datos</title>
-</head>
-<body>
+<?php
+
+require_once('conexion.php');
+$device= $_GET['device_label'];
+$Tempe= $_GET['Temperatura'];
+$Hume= $_GET['Humedad'];
+$conn = new conexion();
+
+$query="SELECT * FROM device_state WHERE idDevice='$device'";
+$select= mysqli_query($conn->conectardb(),$query);
+if($select->num_rows){
+    $query="UPDATE device_state SET temperatura=$Tempe, humedad=$Hume WHERE idDevice='$device'";
+    $update= mysqli_query($conn->conectardb(),$query);
     
-    <form action="Prueba_recibe.php" method="GET">
-<label>Device label:</label>
-<input type="text" name="device_label"><br>
+    
+    $query="INSERT INTO devicehistoric(idDevice,variable,valor,fecha) VALUES('$device','temperatura','$Tempe',NOW())";
+    $insert= mysqli_query($conn->conectardb(),$query);
+    
+    $query="INSERT INTO devicehistoric(idDevice,variable,valor,fecha) VALUES('$device','humedad','$Hume',NOW())";
+    $insert= mysqli_query($conn->conectardb(),$query);
+    echo "***Datos Registrados** <BR> ";
+    echo "Datos ingresados correctamente! [Serie='$device',Temperatura='$Tempe',Humedad='$Hume'] ";
+}
+else{
 
-<label>Temperatura:</label>
-<input type="text" name="Temperatura"><br>
+    echo "***No Existe tarjeta** <BR> ";
 
-<label>Humedad:</label>
-<input type="text" name="Humedad"><br>
+}
 
-
-<input type="submit" name="Send Data"><br>
-
-    </form>
-</body>
-</html>
+?>
