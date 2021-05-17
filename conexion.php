@@ -2,14 +2,6 @@
 
 class conexion{
    
-    //Development
-    //const user='root';
-    //const pass='';
-    //const db='servidoriot';
-    //const servidor='localhost';
-
-    //Remote Database
-    //En local development también funciona esto
     const user='piYJEwHiNC';
     const pass='q91fFhpaFB';
     const db='piYJEwHiNC';
