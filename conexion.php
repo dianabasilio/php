@@ -7,11 +7,6 @@ class conexion{
     const db='sql3412912';
     const servidor='sql3.freemysqlhosting.net';
 
-    #const user='id16792821_root';
-    #const pass='bSUBSHU1PN';
-    #const db='id16792821_databaseservidoriot';
-    #const servidor='files.000webhost.com';
-
     public function conectardb(){
         $conectar = new mysqli(self::servidor, self::user,self::pass,self::db);
         if($conectar->connect_errno){
