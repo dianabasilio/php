@@ -1,8 +1,4 @@
 {
-  "require": {
-    "php": "^7.3|^8.0",
-    "symfony/apache-pack": "^1.0"
-    
-  }
+
 
 }
