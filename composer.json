@@ -1,8 +1,3 @@
 {
-    
-    "require": {
-        "csanquer/pdo-service-provider": "~1.1dev",
-        "symfony/apache-pack": "^1.0"
-    }
 
 }
