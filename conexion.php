@@ -2,10 +2,10 @@
 
 class conexion{
    
-    const user='root';
-    const pass='';
-    const db='servidoriot';
-    const servidor='localhost';
+    const user='sql5414247';
+    const pass='uQEF556p8g';
+    const db='sql5414247';
+    const servidor='sql5.freemysqlhosting.net';
 
     public function conectardb(){
         $conectar = new mysqli(self::servidor, self::user,self::pass,self::db);
