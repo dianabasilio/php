@@ -1,9 +1,9 @@
 <?php
 
 require_once('conexion.php');
-$device= $_GET['device_label'];
-$Tempe= $_GET['Temperatura'];
-$Hume= $_GET['Humedad'];
+$device= $_POST['device_label'];
+$Tempe= $_POST['Temperatura'];
+$Hume= $_POST['Humedad'];
 $conn = new conexion();
 
 $query="SELECT * FROM device_state WHERE idDevice='$device'";
@@ -26,5 +26,6 @@ else{
     echo "***No Existe tarjeta** <BR> ";
 
 }
+
 
 ?>
